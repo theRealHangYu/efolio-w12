@@ -5,7 +5,7 @@ import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import AccessDeniedView from "../views/AccessDeniedView.vue";
 import FirebaseSigninView from "@/views/FirebaseSigninView.vue";
-import FirebaseResigerView from "@/views/FirebaseResigerView.vue";
+import FirebaseRegisterView from "@/views/FirebaseRegisterView.vue";  // Corrected
 import AdminView from "@/views/AdminView.vue";
 import AddBookView from "@/views/AddBookView.vue";
 import GetBookCountView from "@/views/GetBookCountView.vue";
@@ -14,7 +14,7 @@ import CountBookAPI from "@/views/CountBookAPI.vue";
 import GetAllBooksAPI from "@/views/GetAllBooksAPI.vue";
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(process.env.BASE_URL), // Ensure BASE_URL is correctly set
   routes: [
     {
       path: "/",
@@ -34,7 +34,7 @@ const router = createRouter({
     },
     {
       path: "/register",
-      name: "Resigher",
+      name: "Register",  // Corrected
       component: RegisterView,
     },
     {
@@ -44,9 +44,9 @@ const router = createRouter({
     },
     { path: "/FireLogin", name: "FireLogin", component: FirebaseSigninView },
     {
-      path: "/FireResiger",
-      name: "FireRegiser",
-      component: FirebaseResigerView,
+      path: "/FireRegister",  // Corrected
+      name: "FirebaseRegister",
+      component: FirebaseRegisterView,
     },
     { path: "/admin", name: "Admin", component: AdminView },
     { path: "/addbook", name: "AddBook", component: AddBookView },
@@ -59,20 +59,4 @@ const router = createRouter({
     { path: "/CountBookAPI", name: "CountBookAPI", component: CountBookAPI },
     {
       path: "/GetAllBooksAPI",
-      name: "GetAllBooksAPI",
-      component: GetAllBooksAPI,
-    },
-  ],
-});
-router.beforeEach((to, from, next) => {
-  console.log("Navigation guard triggered");
-  const isAuth = localStorage.getItem("isAuth") === "true";
-  console.log("isAuth:", isAuth);
-  if (to.meta.requiresAuth && !isAuth) {
-    next({ name: "AccessDenied" });
-  } else {
-    next();
-  }
-});
-
-export default router;
+     
