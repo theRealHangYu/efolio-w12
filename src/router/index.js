@@ -4,14 +4,14 @@ import AboutView from "../views/AboutView.vue";
 import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import AccessDeniedView from "../views/AccessDeniedView.vue";
-import FirebaseSigninView from "@/views/FirebaseSigninView.vue";
-import FirebaseRegisterView from "@/views/FirebaseRegisterView.vue";  // Corrected
-import AdminView from "@/views/AdminView.vue";
-import AddBookView from "@/views/AddBookView.vue";
-import GetBookCountView from "@/views/GetBookCountView.vue";
-import WeatherView from "@/views/WeatherView.vue";
-import CountBookAPI from "@/views/CountBookAPI.vue";
-import GetAllBooksAPI from "@/views/GetAllBooksAPI.vue";
+import FirebaseSigninView from "../views/FirebaseSigninView.vue";
+import FirebaseRegisterView from "../views/FirebaseRegisterView.vue";  // Corrected
+import AdminView from "../views/AdminView.vue";
+import AddBookView from "../views/AddBookView.vue";
+import GetBookCountView from "../views/GetBookCountView.vue";
+import WeatherView from "../views/WeatherView.vue";
+import CountBookAPI from "../views/CountBookAPI.vue";
+import GetAllBooksAPI from "../views/GetAllBooksAPI.vue";
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL), // Ensure BASE_URL is correctly set
