@@ -59,4 +59,21 @@ const router = createRouter({
     { path: "/CountBookAPI", name: "CountBookAPI", component: CountBookAPI },
     {
       path: "/GetAllBooksAPI",
-     
+      name: "GetAllBooksAPI",
+      component: GetAllBooksAPI,
+    },
+  ],
+});
+
+router.beforeEach((to, from, next) => {
+  console.log("Navigation guard triggered");
+  const isAuth = localStorage.getItem("isAuth") === "true";
+  console.log("isAuth:", isAuth);
+  if (to.meta.requiresAuth && !isAuth) {
+    next({ name: "AccessDenied" });
+  } else {
+    next();
+  }
+});
+
+export default router;
